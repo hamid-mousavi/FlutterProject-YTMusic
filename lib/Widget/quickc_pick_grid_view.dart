@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 Widget QuickcPickGridView(List list, String title, String textButton) {
   return Column(
@@ -12,27 +13,48 @@ Widget QuickcPickGridView(List list, String title, String textButton) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title),
-            ElevatedButton(onPressed: () {}, child: Text(textButton))
+            Container(
+                height: 20,
+                width: 55,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  border: Border(
+                    bottom: BorderSide(color: Colors.grey),
+                    top: BorderSide(color: Colors.grey),
+                    left: BorderSide(color: Colors.grey),
+                    right: BorderSide(color: Colors.grey),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    'Play all',
+                    style:
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+                  ),
+                ))
           ],
         ),
       ),
       SizedBox(
-        height: 220,
+        height: 240,
         child: GridView.builder(
+          physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: list.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
-            mainAxisSpacing: 1,
-            childAspectRatio: 0.14,
+            childAspectRatio: 0.156,
+            crossAxisSpacing: 2,
           ),
           itemBuilder: (context, index) {
             return Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 8, bottom: 4),
+                  padding: const EdgeInsets.only(
+                    left: 8,
+                    bottom: 8,
+                  ),
                   child: Container(
                       decoration:
                           BoxDecoration(borderRadius: BorderRadius.circular(4)),
@@ -41,15 +63,16 @@ Widget QuickcPickGridView(List list, String title, String textButton) {
                           child: Image.network(list[index].imageUrl))),
                 ),
                 SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(list[index].title),
-                    Text(list[index].artistName),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(list[index].title),
+                      Text(list[index].artistName),
+                    ],
+                  ),
                 ),
-                Expanded(child: SizedBox(width: 1)),
                 Icon(Icons.more_vert_outlined)
               ],
             );

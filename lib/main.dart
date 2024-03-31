@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Model/ListenAgain.dart';
+import 'package:flutter_application_1/Widget/category_widget.dart';
+import 'package:flutter_application_1/Widget/list_view_horizental.dart';
 
 import 'Widget/SequareGridView.dart';
 import 'Widget/quickc_pick_grid_view.dart';
@@ -19,6 +22,16 @@ class MainApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: MaterialApp(
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          primaryColor: Colors.black,
+          primarySwatch: Colors.grey,
+          hintColor: Colors.cyan,
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Colors.white),
+            bodyText2: TextStyle(color: Colors.grey[300]),
+          ),
+        ),
         home: Scaffold(
           appBar: AppBar(
             title: const Text('Music'),
@@ -39,10 +52,13 @@ class MainApp extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.only(top: 10),
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: [
-                SquareGridView(listenAgains, 'Listen Again'),
+                CategoryWidget(),
                 QuickcPickGridView(listenAgains, 'Quick ', 'Play All'),
-                ListViewHorizental(listenAgains),
+                ListViewHorizental(
+                    listenAgains, 'Start Radio From A Song', 'Quick Song'),
+                SquareGridView(listenAgains, 'Listen Again'),
               ],
             ),
           ),
