@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-Widget QuickcPickGridView(List list, String title, String textButton) {
+Widget QuickcPickGridView(
+    List list, String title, String textButton, ThemeData themeData) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -12,26 +13,29 @@ Widget QuickcPickGridView(List list, String title, String textButton) {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(title),
+            Text(
+              title,
+              style: themeData.textTheme.headlineSmall,
+            ),
             Container(
-                height: 20,
-                width: 55,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  border: Border(
-                    bottom: BorderSide(color: Colors.grey),
-                    top: BorderSide(color: Colors.grey),
-                    left: BorderSide(color: Colors.grey),
-                    right: BorderSide(color: Colors.grey),
-                  ),
+              height: 20,
+              width: 55,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                border: Border(
+                  bottom: BorderSide(color: Colors.grey),
+                  top: BorderSide(color: Colors.grey),
+                  left: BorderSide(color: Colors.grey),
+                  right: BorderSide(color: Colors.grey),
                 ),
-                child: Center(
-                  child: Text(
-                    'Play all',
-                    style:
-                        TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
-                  ),
-                ))
+              ),
+              child: Center(
+                child: Text(
+                  textButton,
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -68,8 +72,14 @@ Widget QuickcPickGridView(List list, String title, String textButton) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(list[index].title),
-                      Text(list[index].artistName),
+                      Text(
+                        list[index].title,
+                        style: themeData.textTheme.titleMedium,
+                      ),
+                      Text(
+                        list[index].artistName,
+                        style: themeData.textTheme.labelSmall,
+                      ),
                     ],
                   ),
                 ),

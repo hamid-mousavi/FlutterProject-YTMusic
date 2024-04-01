@@ -1,20 +1,53 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Theme/MyTheme.dart';
 
-Widget ListViewHorizental(List list, String title, String subTitle) {
+Widget ListViewHorizental(
+    List list, String title, String subTitle, ThemeData themeData) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-        padding: const EdgeInsets.only(left: 8, top: 16),
-        child: Text(title),
+        padding: const EdgeInsets.only(top: 16, left: 12, right: 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              subTitle,
+              style: themeData.textTheme.labelSmall,
+            ),
+            Container(
+              height: 20,
+              width: 55,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                border: Border(
+                  bottom: BorderSide(color: Colors.grey),
+                  top: BorderSide(color: Colors.grey),
+                  left: BorderSide(color: Colors.grey),
+                  right: BorderSide(color: Colors.grey),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  AppThemString.playAll,
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
       Padding(
         padding: const EdgeInsets.only(left: 8, bottom: 4),
-        child: Text(subTitle),
+        child: Text(
+          title,
+          style: themeData.textTheme.titleLarge,
+        ),
       ),
       SizedBox(
-        height: 400,
+        height: 240,
         // width: 400,
         child: PageView.builder(
           padEnds: false,
