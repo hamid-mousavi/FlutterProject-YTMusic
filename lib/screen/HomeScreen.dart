@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Theme/MyTheme.dart';
 import 'package:flutter_application_1/Widget/SequareGridView.dart';
 import 'package:flutter_application_1/Widget/category_widget.dart';
@@ -22,11 +23,15 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                  color: Colors.amber, borderRadius: BorderRadius.circular(20)),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(20)),
+              ),
             )
           ],
         ),
@@ -36,8 +41,11 @@ class HomeScreen extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             children: [
               const CategoryWidget(),
-              QuickcPickGridView(listenAgains, AppThemString.quick,
-                  AppThemString.playAll, themeData),
+              QuickPickGridView(
+                  list: listenAgains,
+                  title: AppThemString.quick,
+                  textButton: AppThemString.playAll,
+                  themeData: themeData),
               ListViewHorizental(listenAgains, AppThemString.news,
                   AppThemString.startRadioFromASong, themeData),
               SquareGridView(listenAgains, AppThemString.listenAgain),

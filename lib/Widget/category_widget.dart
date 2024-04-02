@@ -22,12 +22,14 @@ class _CategoryWidgetState extends State<CategoryWidget> {
           itemCount: isSelected.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+              padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
               child: GestureDetector(
                 onTap: () {
                   setState(
                     () {
-                      isSelected = isSelected.map((e) => false).toList();
+                      if (!isSelected[index]) {
+                        isSelected = isSelected.map((e) => false).toList();
+                      }
                       isSelected[index] = !isSelected[index];
                     },
                   );

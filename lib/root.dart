@@ -57,26 +57,41 @@ class _RootScreenState extends State<RootScreen> {
             body: IndexedStack(
               index: selectedScreenIndex,
               children: [
-                _navigator(_homeKey, homeIndex, HomeScreen()),
+                _navigator(
+                  _homeKey,
+                  homeIndex,
+                  HomeScreen(),
+                ),
                 _navigator(
                   _sampleKey,
                   sampleIndex,
                   const Text('نمونه ها'),
                 ),
-                _navigator(_libraryKey, libraryIndex, const Text('کتابخانه')),
-                _navigator(_albumKey, albumeIndex, const Text('آلبوم')),
+                _navigator(
+                  _libraryKey,
+                  libraryIndex,
+                  const Text('کتابخانه'),
+                ),
+                _navigator(
+                  _albumKey,
+                  albumeIndex,
+                  const Text('آلبوم'),
+                ),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
               items: const [
                 BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.home), label: 'خانه'),
+                  icon: Icon(CupertinoIcons.home),
+                  label: 'خانه',
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.cart), label: 'نمونه ها'),
+                    icon: Icon(CupertinoIcons.play_rectangle),
+                    label: 'نمونه ها'),
                 BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.person), label: 'کتابخانه'),
+                    icon: Icon(CupertinoIcons.music_albums), label: 'آلبوم'),
                 BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.person), label: 'آلبوم'),
+                    icon: Icon(CupertinoIcons.book_solid), label: 'کتابخانه'),
               ],
               currentIndex: selectedScreenIndex,
               onTap: (selectedIndex) {

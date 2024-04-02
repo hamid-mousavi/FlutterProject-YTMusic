@@ -26,7 +26,7 @@ Widget SquareGridView(List list, String title) {
                     Stack(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10),
+                          padding: const EdgeInsets.only(right: 10),
                           child: SizedBox(
                             height: 104,
                             width: 104,

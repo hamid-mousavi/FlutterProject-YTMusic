@@ -1,16 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Model/ListenAgain.dart';
 import 'package:flutter_application_1/Theme/MyTheme.dart';
-import 'package:flutter_application_1/Widget/category_widget.dart';
-import 'package:flutter_application_1/Widget/list_view_horizental.dart';
 import 'package:flutter_application_1/root.dart';
-
-import 'Widget/SequareGridView.dart';
-import 'Widget/quickc_pick_grid_view.dart';
 
 void main() {
   runApp(const MainApp());
@@ -34,6 +28,60 @@ class MainApp extends StatelessWidget {
 }
 
 List<ListenAgain> listenAgains = [
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
+  ListenAgain(
+      title: 'لیالی الجروح',
+      artistName: 'محمد باقر الخاقانی',
+      imageUrl:
+          'https://nimboom.zarebin.ir/ava-cover/-18/-4418/-1724954418?zb_svc=ava-prod&zb_dmn=apr&zb_scm=https&zb_pl=0&zb_from=ths&zb_type=internal',
+      isPlay: false),
   ListenAgain(
       title: 'لیالی الجروح',
       artistName: 'محمد باقر الخاقانی',

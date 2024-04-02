@@ -40,26 +40,26 @@ Widget ListViewHorizental(
         ),
       ),
       Padding(
-        padding: const EdgeInsets.only(left: 8, bottom: 4),
+        padding: const EdgeInsets.only(right: 10, bottom: 4),
         child: Text(
           title,
           style: themeData.textTheme.titleLarge,
         ),
       ),
       SizedBox(
-        height: 240,
+        height: 300,
         // width: 400,
         child: PageView.builder(
           padEnds: false,
           controller: PageController(
             viewportFraction: 0.8,
           ),
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemCount: list.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.only(left: 12),
+              padding: const EdgeInsets.only(right: 12),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
