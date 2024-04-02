@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/HomeScreen.dart';
+import 'package:flutter_application_1/screen/Library.dart';
 
 const int homeIndex = 0;
 const int sampleIndex = 1;
-const int libraryIndex = 2;
 const int albumeIndex = 2;
+const int libraryIndex = 3;
 
 class RootScreen extends StatefulWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -20,14 +21,15 @@ class _RootScreenState extends State<RootScreen> {
 
   final GlobalKey<NavigatorState> _homeKey = GlobalKey();
   final GlobalKey<NavigatorState> _sampleKey = GlobalKey();
-  final GlobalKey<NavigatorState> _libraryKey = GlobalKey();
+
   final GlobalKey<NavigatorState> _albumKey = GlobalKey();
+  final GlobalKey<NavigatorState> _libraryKey = GlobalKey();
 
   late final map = {
     homeIndex: _homeKey,
     sampleIndex: _sampleKey,
+    albumeIndex: _albumKey,
     libraryIndex: _libraryKey,
-    albumeIndex: _libraryKey,
   };
 
   Future<bool> _onWillPop() async {
@@ -68,14 +70,14 @@ class _RootScreenState extends State<RootScreen> {
                   const Text('نمونه ها'),
                 ),
                 _navigator(
-                  _libraryKey,
-                  libraryIndex,
-                  const Text('کتابخانه'),
-                ),
-                _navigator(
                   _albumKey,
                   albumeIndex,
                   const Text('آلبوم'),
+                ),
+                _navigator(
+                  _libraryKey,
+                  libraryIndex,
+                  LibraryScreen(),
                 ),
               ],
             ),

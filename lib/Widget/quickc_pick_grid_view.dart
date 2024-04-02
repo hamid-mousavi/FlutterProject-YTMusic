@@ -105,8 +105,8 @@ class QuickPickGridView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 12),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 12),
                         child: Icon(Icons.more_vert_outlined),
                       )
                     ],
