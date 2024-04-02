@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/HomeScreen.dart';
 import 'package:flutter_application_1/screen/Library.dart';
 
+import 'screen/album_screen.dart';
+
 const int homeIndex = 0;
 const int sampleIndex = 1;
 const int albumeIndex = 2;
@@ -72,7 +74,7 @@ class _RootScreenState extends State<RootScreen> {
                 _navigator(
                   _albumKey,
                   albumeIndex,
-                  const Text('آلبوم'),
+                  AlbumScreen(),
                 ),
                 _navigator(
                   _libraryKey,

@@ -19,12 +19,19 @@ class MyAppThemes {
   );
 
   static final darkTheme = ThemeData(
+    colorScheme: const ColorScheme(
+        brightness: Brightness.dark,
+        primary: Colors.red,
+        onPrimary: Colors.red,
+        secondary: Colors.red,
+        onSecondary: Colors.red,
+        error: Colors.white,
+        onError: Colors.white,
+        background: Colors.black,
+        onBackground: Colors.white,
+        surface: Colors.black,
+        onSurface: Colors.white),
     iconTheme: const IconThemeData(color: Colors.white),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedIconTheme: IconThemeData(color: Colors.red),
-        unselectedIconTheme: IconThemeData(
-          color: Colors.white,
-        )),
     primaryColor: MyAppColors.darkBlue,
     brightness: Brightness.dark,
   );
