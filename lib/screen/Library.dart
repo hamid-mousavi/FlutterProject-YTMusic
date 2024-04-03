@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Widget/category_widget.dart';
-import 'package:flutter_application_1/Widget/row_song_widget.dart';
 
 import 'downloaded_screen.dart';
 
@@ -33,7 +32,7 @@ class LibraryScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const CategoryWidget(),
+                // CategoryWidget(),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

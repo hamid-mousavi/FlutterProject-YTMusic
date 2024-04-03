@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Model/category.dart';
+import 'package:flutter_application_1/screen/HomeScreen/bloc/home_bloc.dart';
 
 class CategoryWidget extends StatefulWidget {
-  const CategoryWidget({super.key});
+  final List<SongCategory> categories;
+
+  const CategoryWidget({super.key, required this.categories});
 
   @override
   State<CategoryWidget> createState() => _CategoryWidgetState();
 }
 
 class _CategoryWidgetState extends State<CategoryWidget> {
-  List<bool> isSelected = List.generate(3, (index) => false);
+  List<bool> isSelected = List.generate(6, (index) => false);
 
   bool value = false;
 
@@ -19,7 +23,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
         height: 64,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: isSelected.length,
+          itemCount: widget.categories.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
@@ -44,7 +48,8 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text('Home $index')),
+                    child: Center(
+                        child: Text(widget.categories[index].title.toString())),
                   ),
                 ),
               ),

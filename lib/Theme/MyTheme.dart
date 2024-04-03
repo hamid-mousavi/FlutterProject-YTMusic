@@ -19,6 +19,7 @@ class MyAppThemes {
   );
 
   static final darkTheme = ThemeData(
+    fontFamily: 'iransans',
     colorScheme: const ColorScheme(
         brightness: Brightness.dark,
         primary: Colors.red,
@@ -32,6 +33,12 @@ class MyAppThemes {
         surface: Colors.black,
         onSurface: Colors.white),
     iconTheme: const IconThemeData(color: Colors.white),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        selectedLabelStyle: TextStyle(color: Colors.red),
+        selectedIconTheme: IconThemeData(color: Colors.red),
+        unselectedIconTheme: IconThemeData(
+          color: Colors.white,
+        )),
     primaryColor: MyAppColors.darkBlue,
     brightness: Brightness.dark,
   );

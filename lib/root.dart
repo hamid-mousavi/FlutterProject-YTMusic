@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/HomeScreen.dart';
+import 'package:flutter_application_1/screen/HomeScreen/HomeScreen.dart';
 import 'package:flutter_application_1/screen/Library.dart';
-
 import 'screen/album_screen.dart';
 
 const int homeIndex = 0;
@@ -86,7 +85,9 @@ class _RootScreenState extends State<RootScreen> {
             bottomNavigationBar: BottomNavigationBar(
               items: const [
                 BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.home),
+                  icon: Icon(
+                    CupertinoIcons.home,
+                  ),
                   label: 'خانه',
                 ),
                 BottomNavigationBarItem(

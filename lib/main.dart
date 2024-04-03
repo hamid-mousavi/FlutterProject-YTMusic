@@ -5,8 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Model/ListenAgain.dart';
 import 'package:flutter_application_1/Theme/MyTheme.dart';
 import 'package:flutter_application_1/root.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  await Supabase.initialize(
+    url: 'https://ifbdbzawjrqdxbuojwbk.supabase.co',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmYmRiemF3anJxZHhidW9qd2JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0NTA0NTYsImV4cCI6MjAyNjAyNjQ1Nn0.9OYh7N0O165GoxhaVJfRvJ_YVK2TzWe37gMvJZ7boCQ',
+  );
   runApp(const MainApp());
 }
 
