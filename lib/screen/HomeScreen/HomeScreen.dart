@@ -10,6 +10,12 @@ import 'package:flutter_application_1/Widget/list_view_horizental.dart';
 import 'package:flutter_application_1/Widget/quickc_pick_grid_view.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/screen/HomeScreen/bloc/home_bloc.dart';
+import 'package:youtube_data_api/models/channel.dart';
+import 'package:youtube_data_api/models/playlist.dart';
+import 'package:youtube_data_api/models/video.dart';
+import 'package:youtube_data_api/youtube_data_api.dart';
+
+YoutubeDataApi youtubeDataApi = YoutubeDataApi();
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -22,7 +28,11 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Music'),
           actions: [
-            const Icon(Icons.search),
+            InkWell(
+                onTap: () async {
+                  await getSearch('محمد');
+                },
+                child: Icon(Icons.search)),
             const SizedBox(
               width: 20,
             ),
@@ -76,5 +86,19 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> getSearch(String query) async {
+    List<dynamic> videoResult = await youtubeDataApi.fetchSearchVideo(
+        query, 'AIzaSyAl6CsAZH22V4XJ7zYr9qDFTvbm************');
+    videoResult.forEach((element) {
+      if (element is Video) {
+        Video video = element;
+      } else if (element is Channel) {
+        Channel channel = element;
+      } else if (element is PlayList) {
+        PlayList playList = element;
+      }
+    });
   }
 }

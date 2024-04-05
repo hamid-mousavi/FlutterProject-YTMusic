@@ -19,7 +19,7 @@ class MyAppThemes {
   );
 
   static final darkTheme = ThemeData(
-    fontFamily: 'iransans',
+    fontFamily: 'DroidKufi',
     colorScheme: const ColorScheme(
         brightness: Brightness.dark,
         primary: Colors.red,

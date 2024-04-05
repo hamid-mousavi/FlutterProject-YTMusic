@@ -17,13 +17,15 @@ class PlayerScreen extends StatelessWidget {
                 const Padding(padding: EdgeInsets.only(top: 5)),
                 ToggleSwich(),
                 const SizedBox(height: 10),
-                SizedBox(
-                  width: 359,
-                  height: 359,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                        'https://webahang.ir/wp-content/uploads/2023/08/Mohammadbagher-Al-Khaghani041.jpg'),
+                Expanded(
+                  child: SizedBox(
+                    width: 359,
+                    height: 359,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.network(
+                          'https://webahang.ir/wp-content/uploads/2023/08/Mohammadbagher-Al-Khaghani041.jpg'),
+                    ),
                   ),
                 ),
                 const Padding(
@@ -55,21 +57,21 @@ class PlayerScreen extends StatelessWidget {
                     Text('3.33'),
                   ],
                 ),
-                const Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(CupertinoIcons.repeat),
-                      Icon(CupertinoIcons.forward_end_fill),
-                      Icon(
-                        CupertinoIcons.play_circle_fill,
-                        size: 45,
-                      ),
-                      Icon(CupertinoIcons.backward_end_fill),
-                      Icon(CupertinoIcons.shuffle),
-                    ],
-                  ),
+                const SizedBox(height: 20),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(CupertinoIcons.repeat),
+                    Icon(CupertinoIcons.forward_end_fill),
+                    Icon(
+                      CupertinoIcons.play_circle_fill,
+                      size: 60,
+                    ),
+                    Icon(CupertinoIcons.backward_end_fill),
+                    Icon(CupertinoIcons.shuffle),
+                  ],
                 ),
+                const SizedBox(height: 20)
               ],
             ),
           ),

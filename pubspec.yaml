@@ -16,6 +16,8 @@ dependencies:
   file_picker: ^8.0.0+1
   #open_file: ^3.3.2
   just_audio: ^0.9.36
+  webview_flutter: ^4.7.0
+  youtube_data_api: ^1.0.4
 
 
 
@@ -31,4 +33,6 @@ flutter:
     - family: iransans
       fonts:
         - asset: assets/fonts/IranianSans.ttf
-         
+    - family: DroidKufi
+      fonts:
+        - asset: assets/fonts/DroidKufi-Regular.ttf
